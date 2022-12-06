@@ -21,7 +21,6 @@ fun reverseString(){
     val string = "pooja"
     var result = ""
     var i = string.length-1
-    println(i)
 
     while (i>0){
         result += string.get(i).toString()
