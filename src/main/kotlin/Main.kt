@@ -1,6 +1,7 @@
 fun main() {
 //    reverseArray()
-    reverseString()
+//    reverseString()
+    searchAnElement()
 }
 
 fun reverseArray(){
@@ -28,4 +29,18 @@ fun reverseString(){
     }
     println(result)
     //or string.reversed
+}
+
+fun searchAnElement(){
+    val array = arrayListOf(2,4,6,8,10,7,9,1)
+    var i = 0
+    val textElement = 10
+    var result = 0
+    while (i<array.size-1){
+        if (array[i]==textElement){
+            result = i
+        }
+        i+=1
+    }
+    println(result)
 }
