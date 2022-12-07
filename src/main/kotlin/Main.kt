@@ -6,7 +6,8 @@ fun main() {
 //    maxAndMin(array)
 //    missnNum()
 //    waveArray()
-    bitonicPoint()
+//    bitonicPoint()
+    maxOfSub()
 }
 
 
@@ -106,3 +107,31 @@ fun bitonicPoint(){
     }
     println(result)
 }
+
+fun maxOfSub(){
+    val a = arrayListOf(1, 2, 3, 1, 4, 5, 2, 3, 6)
+    var i = 0
+    val m = 2
+    val set = arrayListOf<Int>()
+    val result = arrayListOf<Int>()
+    while (i<a.size-m){
+        val j = i+2
+        for (x in i..j){
+            set.add(a[x])
+        }
+        var max = set[0]
+        var k = 0
+        while (k<set.size){
+            if(set[k]>max){
+                max = set[k]
+            }
+            k+=1
+        }
+        result.add(max)
+        i+=1
+
+    }
+    println(result)
+
+}
+
