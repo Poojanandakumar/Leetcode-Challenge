@@ -5,8 +5,10 @@ fun main() {
 //    searchAnElement()
 //    maxAndMin(array)
 //    missnNum()
-    waveArray()
+//    waveArray()
+    bitonicPoint()
 }
+
 
 fun reverseArray(array:ArrayList<Int>){
     var i = 0
@@ -88,4 +90,19 @@ fun waveArray(){
         i+=2
     }
     println(a)
+}
+
+fun bitonicPoint(){
+    val a = arrayListOf(1,15,25,45,42,21,17,12,11)
+    var i = 0
+    var result = 0
+    while (i<a.size){
+        if(a[i]<a[i+1]){
+            i+=1
+        }else{
+            result = a[i]
+            break
+        }
+    }
+    println(result)
 }
