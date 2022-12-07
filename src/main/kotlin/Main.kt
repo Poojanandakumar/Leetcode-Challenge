@@ -4,7 +4,8 @@ fun main() {
 //    reverseString()
 //    searchAnElement()
 //    maxAndMin(array)
-    missnNum()
+//    missnNum()
+    waveArray()
 }
 
 fun reverseArray(array:ArrayList<Int>){
@@ -75,4 +76,16 @@ fun missnNum(){
         i+=1
     }
     println(result)
+}
+
+fun waveArray(){
+    val a = arrayListOf(2,4,7,8,9,10)
+    var i = 0
+    while (i+1<a.size){
+        val temp = a[i]
+        a[i] = a[i+1]
+        a[i+1] = temp
+        i+=2
+    }
+    println(a)
 }
