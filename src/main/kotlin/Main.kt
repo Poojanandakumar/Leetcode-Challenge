@@ -1,5 +1,5 @@
 fun main() {
-    val array = arrayListOf(2,4,6,8,100,7,9,1)
+    val array = arrayListOf(2,4,6,3,100,7,9,1)
 //    reverseArray()
 //    reverseString()
 //    searchAnElement()
@@ -7,7 +7,8 @@ fun main() {
 //    missnNum()
 //    waveArray()
 //    bitonicPoint()
-    maxOfSub()
+//    maxOfSub()
+    valEqualIndex(array)
 }
 
 
@@ -133,5 +134,20 @@ fun maxOfSub(){
     }
     println(result)
 
+}
+
+fun valEqualIndex(a:ArrayList<Int>){
+    var i = 0
+    var result = 0
+    if(a.size==0){
+        result = 0
+    }
+    while (i<a.size){
+        if(i==a[i]){
+            result = i
+        }
+        i+=1
+    }
+    println(result)
 }
 
