@@ -8,7 +8,10 @@ fun main() {
 //    waveArray()
 //    bitonicPoint()
 //    maxOfSub()
-    valEqualIndex(array)
+//    valEqualIndex(array)
+//    rotateArr()
+    firLastOcc()
+
 }
 
 
@@ -150,4 +153,76 @@ fun valEqualIndex(a:ArrayList<Int>){
     }
     println(result)
 }
+
+fun reverseNumber(number:Int):Int{
+    var number = number
+    var reminder = 0
+    var reverse = 0
+    while(number!=0){
+        reminder = number%10
+        reverse = reverse*10+reminder
+        number = number/10
+    }
+    return reverse
+}
+
+fun palinArray(){
+    val array = arrayListOf(111, 222, 333, 444, 555)
+    var result = 1
+    array.forEach{
+            item->
+        if(item!=reverseNumber(item)){
+
+            result=0
+        }
+    }
+    println(result)
+}
+
+fun rotateArr() {
+    val arr = arrayListOf(1, 2, 3, 4, 5)
+
+    if (arr.size == 1) {
+        println(arr[0])
+    }
+    if (arr.size <= 0) {
+        println("no result")
+    }
+    if (arr.size > 0 && arr.size != 1) {
+        var i = arr.size - 1
+        var x = arr[arr.size - 1]
+        while (i > 0) {
+            arr[i] = arr[i - 1]
+            i -= 1
+        }
+        arr[0] = x
+        println(arr)
+    }
+}
+
+    fun firLastOcc() {
+        val arr = arrayListOf(1, 3, 5, 5, 5, 5, 7, 123, 125)
+        var i = 0
+        val x = 2
+        var first = -1
+        var last = -1
+        while (i < arr.size) {
+            if (arr[i] == x) {
+                if (first == -1) {
+                    first = i
+                } else {
+                    last = i
+                }
+            }
+            i += 1
+        }
+        if (last == -1) {
+            last = first
+        }
+
+        println(first)
+        println(last)
+    }
+
+
 
