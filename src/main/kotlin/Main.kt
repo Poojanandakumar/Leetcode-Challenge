@@ -1,5 +1,7 @@
+
 fun main() {
     val array = arrayListOf(2,4,6,3,100,7,9,1)
+
 //    reverseArray()
 //    reverseString()
 //    searchAnElement()
@@ -10,8 +12,8 @@ fun main() {
 //    maxOfSub()
 //    valEqualIndex(array)
 //    rotateArr()
-    firLastOcc()
-
+//    firLastOcc()
+sortArray(array)
 }
 
 
@@ -154,8 +156,8 @@ fun valEqualIndex(a:ArrayList<Int>){
     println(result)
 }
 
-fun reverseNumber(number:Int):Int{
-    var number = number
+fun reverseNumber(num:Int):Int{
+    var number = num
     var reminder = 0
     var reverse = 0
     while(number!=0){
@@ -223,6 +225,10 @@ fun rotateArr() {
         println(first)
         println(last)
     }
+
+fun sortArray(a:ArrayList<Int>){
+
+}
 
 
 
