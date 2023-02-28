@@ -1,6 +1,6 @@
 
 fun main() {
-    val array = arrayListOf(2,4,6,3,100,7,9,1)
+    val array = arrayListOf(1, 2, 3, 4, 5, 2)
 
 //    reverseArray()
 //    reverseString()
@@ -13,7 +13,8 @@ fun main() {
 //    valEqualIndex(array)
 //    rotateArr()
 //    firLastOcc()
-sortArray(array)
+//sortArray(array)
+    lead(array)
 }
 
 
@@ -229,6 +230,34 @@ fun rotateArr() {
 fun sortArray(a:ArrayList<Int>){
 
 }
+
+fun lead(a:ArrayList<Int>){
+    var leaders = arrayListOf<Int>()
+    var lLead = 0
+    while (lLead<=a.size-1){
+        var lead = a[lLead]
+        var j = lLead+1
+        var isLead = true
+
+        while (j<=a.size-1){
+            if(a[j]>lead){
+                isLead = false
+                break
+            }else{
+                isLead = true
+                j += 1
+            }
+        }
+
+        if(isLead){
+            leaders.add(lead)
+        }
+        lLead += 1
+
+    }
+    println(leaders)
+}
+
 
 
 
