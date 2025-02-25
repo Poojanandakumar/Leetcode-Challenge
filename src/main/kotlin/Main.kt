@@ -14,8 +14,11 @@ fun main() {
 //    rotateArr()
 //    firLastOcc()
 //sortArray(array)
-    lead(array)
+//    lead(array)
+//    alternate()
+    DSA.pattern1(4)
 }
+
 
 
 fun reverseArray(array:ArrayList<Int>){
@@ -257,6 +260,25 @@ fun lead(a:ArrayList<Int>){
     }
     println(leaders)
 }
+
+fun alternate(){
+    val array = intArrayOf(7,1,2,3,4,5,6)
+    var ascb = array
+    var desb = array
+
+    ascb.sort()
+
+    desb.sortDescending()
+    var res = arrayListOf<Int>()
+    var i = 0
+    print(ascb.joinToString())
+    print(desb.joinToString())
+//    while (i<array.size){
+//        var k = 0
+//        res[i] = asc
+//    }
+}
+
 
 
 
