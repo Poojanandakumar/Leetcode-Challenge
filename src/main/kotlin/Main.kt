@@ -1,6 +1,6 @@
 
 fun main() {
-    val array = arrayListOf(1, 2, 3, 4, 5, 2)
+    val array = arrayListOf(1,2,3,1)
 
 //    reverseArray()
 //    reverseString()
@@ -16,7 +16,10 @@ fun main() {
 //sortArray(array)
 //    lead(array)
 //    alternate()
-    DSA.pattern1(4)
+//    DSA.pattern1(4)
+//    println(DSA.peak())
+//    println(DSA.searchFirsthalf())
+    println(DSA.cyclicSortMissingNo())
 }
 
 
@@ -278,6 +281,8 @@ fun alternate(){
 //        res[i] = asc
 //    }
 }
+
+
 
 
 

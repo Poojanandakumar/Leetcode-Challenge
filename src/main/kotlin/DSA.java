@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class DSA {
     static void pattern1(int nr) {
         StringBuilder s = new StringBuilder();
@@ -134,6 +136,56 @@ public class DSA {
             return firsttry;
         }
         return orderArgnosticbinarySearch(arr,target,peak+1,arr.length-1);
+    }
+
+    static void cyclicSort() {
+        int[] nums = new int[]{3, 4, 1,2, 5};
+        int i = 0;
+        int n = nums.length-1;
+        while(i<n){
+            int correctIndex = nums[i]-1;
+            if(nums[i]!=nums[correctIndex]){
+                nums  = swap(nums,i,correctIndex);
+            }else{
+                i++;
+            }
+        }
+        System.out.println(nums);
+    }
+
+    static int cyclicSortMissingNo() {
+        int[] nums = new int[]{9,6,4,2,3,5,7,0,1};
+        int i = 0;
+        int n = nums.length;
+        while(i<n){
+            if(nums[i]==n){
+                i++;
+            }else{
+                int correctIndex = nums[i];
+                if(nums[i]!=i){
+                    nums  = swap(nums,i,correctIndex);
+                }else{
+                    i++;
+                }
+            }
+        }
+
+        int k = 0;
+        while(k<n){
+            if(nums[k]!=k){
+                return k;
+            }else{
+                k++;
+            }
+        }
+        return n;
+    }
+
+    static int[] swap(int[] nums,int i,int j){
+        int temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
+        return nums;
     }
 
 
