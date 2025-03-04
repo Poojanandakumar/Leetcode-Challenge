@@ -1,4 +1,5 @@
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DSA {
     static void pattern1(int nr) {
@@ -27,6 +28,7 @@ public class DSA {
 
         return -1; // Target not found
     }
+
     public static int orderArgnosticbinarySearch(int[] nums, int target, int start, int end) {
 
 
@@ -55,7 +57,6 @@ public class DSA {
         // Target not found
         return -1;
     }
-
 
 
     public int search(int[] nums, int target, boolean findstartindex) {
@@ -93,7 +94,7 @@ public class DSA {
         return ans;
     }
 
-    static int peak(int[] num ) {
+    static int peak(int[] num) {
 
         int s = 0;
         int e = num.length - 1;
@@ -111,7 +112,7 @@ public class DSA {
     }
 
     static int searchInmountain() {
-        int[] num = {1,2,1,3,5,6,4};
+        int[] num = {1, 2, 1, 3, 5, 6, 4};
         int s = 0;
         int e = num.length - 1;
         while (s < e) {
@@ -127,61 +128,63 @@ public class DSA {
         return s;
     }
 
-    static int searchFirsthalf(){
-        int[] arr = {0,1,2,4,2,1};
+    static int searchFirsthalf() {
+        int[] arr = {0, 1, 2, 4, 2, 1};
         int target = 3;
         int peak = peak(arr);
-        int firsttry = orderArgnosticbinarySearch(arr,target,0,peak);
-        if(firsttry!=-1){
+        int firsttry = orderArgnosticbinarySearch(arr, target, 0, peak);
+        if (firsttry != -1) {
             return firsttry;
         }
-        return orderArgnosticbinarySearch(arr,target,peak+1,arr.length-1);
+        return orderArgnosticbinarySearch(arr, target, peak + 1, arr.length - 1);
     }
 
     static void cyclicSort() {
-        int[] nums = new int[]{3, 4, 1,2, 5};
+        int[] nums = new int[]{3, 4, 1, 2, 5};
         int i = 0;
-        int n = nums.length-1;
-        while(i<n){
-            int correctIndex = nums[i]-1;
-            if(nums[i]!=nums[correctIndex]){
-                nums  = swap(nums,i,correctIndex);
-            }else{
+        int n = nums.length - 1;
+        while (i < n) {
+            int correctIndex = nums[i] - 1;
+            if (nums[i] != nums[correctIndex]) {
+                nums = swap(nums, i, correctIndex);
+            } else {
                 i++;
             }
         }
         System.out.println(nums);
     }
 
-    static int cyclicSortMissingNo() {
-        int[] nums = new int[]{9,6,4,2,3,5,7,0,1};
+    static List<Integer> cyclicSortMissingNo() {
+        int[] nums = new int[]{1,2};
         int i = 0;
         int n = nums.length;
-        while(i<n){
-            if(nums[i]==n){
+        while (i < n) {
+            int correctIndex = nums[i] - 1;
+            if (nums[i] != nums[correctIndex]) {
+                nums = swap(nums, i, correctIndex);
+
+            } else {
                 i++;
-            }else{
-                int correctIndex = nums[i];
-                if(nums[i]!=i){
-                    nums  = swap(nums,i,correctIndex);
-                }else{
-                    i++;
-                }
             }
         }
 
         int k = 0;
-        while(k<n){
-            if(nums[k]!=k){
-                return k;
-            }else{
-                k++;
+        List<Integer> rs = new ArrayList<>();
+        while (k < n) {
+            if (nums[k] != k + 1) {
+                rs.add(k+1);
             }
+            k++;
+
         }
-        return n;
+//        if(rs.isEmpty()){
+//            rs.add(n);
+//            return rs;
+//        }
+        return rs;
     }
 
-    static int[] swap(int[] nums,int i,int j){
+    static int[] swap(int[] nums, int i, int j) {
         int temp = nums[i];
         nums[i] = nums[j];
         nums[j] = temp;
