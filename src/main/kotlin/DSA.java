@@ -180,6 +180,7 @@ public class DSA {
 //        if(rs.isEmpty()){
 //            rs.add(n);
 //            return rs;
+
 //        }
         return rs;
     }
@@ -190,6 +191,83 @@ public class DSA {
         nums[j] = temp;
         return nums;
     }
+
+    public static int[] concatenationOfArray(int[] nums) {
+        int[] result = new int[nums.length * 2];
+
+        int i = 0;
+        int j = 0;
+        while (i < nums.length * 2 && j < nums.length) {
+            result[i] = nums[j];
+            if (i == nums.length - 1) {
+                j = 0;
+            } else {
+                j++;
+            }
+            i++;
+        }
+
+        return result;
+    }
+
+    public static int[] arrayFromPermutation(int[] nums) {
+        int[] result = new int[nums.length];
+        int n = nums.length;
+        for (int i = 0; i < n; i++) {
+            result[i] = nums[nums[i]];
+        }
+        return result;
+    }
+
+    public static int[] runningSum(int[] nums) {
+        int sum = nums[0];
+        int[] result = new int[nums.length];
+        result[0] = sum;
+        for (int i = 1; i < nums.length; i++) {
+            sum = sum + nums[i];
+            result[i] = sum;
+        }
+        return result;
+    }
+
+    public static int maximumWealth(int[][] accounts) {
+        List<Integer> sums = new ArrayList<>();
+        for (int i = 0; i < accounts.length; i++) {
+            int sum = 0;
+            for (int j = 0; j < accounts[i].length; j++) {
+                sum = sum + accounts[i][j];
+            }
+            sums.add(sum);
+        }
+        return greatestNumber(sums);
+    }
+
+    static int greatestNumber(List<Integer> nums) {
+        int gr = nums.get(0);
+        for (int i = 0; i < nums.size(); i++) {
+            if (nums.get(i) > gr) {
+                gr = nums.get(i);
+            }
+        }
+        return gr;
+    }
+
+    public static int[] shuffle(int[] nums, int n) {
+        int i = 0;
+        int j = n;
+        int k = 0;
+        int[] result = new int[2 * n];
+
+        while (i < n && j < 2 * n && k < 2 * n) {
+            result[k] = nums[i];
+            result[k + 1] = nums[j];
+            i++;
+            j++;
+            k = k+2;
+        }
+        return result;
+    }
+
 
 
 }
