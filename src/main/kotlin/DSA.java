@@ -155,7 +155,7 @@ public class DSA {
     }
 
     static List<Integer> cyclicSortMissingNo() {
-        int[] nums = new int[]{1,2};
+        int[] nums = new int[]{1, 2};
         int i = 0;
         int n = nums.length;
         while (i < n) {
@@ -172,7 +172,7 @@ public class DSA {
         List<Integer> rs = new ArrayList<>();
         while (k < n) {
             if (nums[k] != k + 1) {
-                rs.add(k+1);
+                rs.add(k + 1);
             }
             k++;
 
@@ -263,11 +263,82 @@ public class DSA {
             result[k + 1] = nums[j];
             i++;
             j++;
-            k = k+2;
+            k = k + 2;
         }
         return result;
     }
 
+    public static int missingNumber() {
+        int[] nums = new int[]{1};
+        int i = 0;
+        while (i < nums.length) {
+            int correctindex = nums[i] - 1;
+            if (nums[i] > 0 && nums[i] < nums.length && nums[i] != nums[correctindex]) {
+                swap(nums, i, correctindex);
+            } else {
+                i++;
+            }
+        }
+
+        int k = 0;
+
+        while (k < nums.length) {
+            if (nums[k] != k + 1) {
+                return k + 1;
+            }
+            k++;
+        }
+        return nums.length+1;
+
+    }
+
+    public static List<Integer> findDuplicatesFromArray() {
+        int[] nums = new int[]{1};
+        int i = 0;
+        while (i < nums.length) {
+            int correctindex = nums[i] - 1;
+            if (nums[i] != nums[correctindex]) {
+                swap(nums, i, correctindex);
+            } else {
+                i++;
+            }
+        }
+
+        int k = 0;
+        List<Integer> result = new ArrayList<>();
+        while (k < nums.length) {
+            if (nums[k] != k + 1) {
+                result.add(nums[k]);
+            }
+            k++;
+        }
+        return result;
+    }
+
+
+    public static int[] setMismatch() {
+        int[] nums = new int[]{1, 2, 2, 4};
+        int i = 0;
+        while (i < nums.length) {
+            int correctindex = nums[i] - 1;
+            if (nums[i] != nums[correctindex]) {
+                swap(nums, i, correctindex);
+            } else {
+                i++;
+            }
+        }
+
+        int k = 0;
+        int[] result = new int[2];
+        while (k < nums.length) {
+            if (nums[k] != k + 1) {
+                result[0] = nums[k];
+                result[1] = k + 1;
+            }
+            k++;
+        }
+        return result;
+    }
 
 
 }

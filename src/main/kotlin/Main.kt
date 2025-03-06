@@ -1,3 +1,5 @@
+import java.util.*
+import kotlin.collections.ArrayList
 
 fun main() {
     val array = arrayListOf(1,2,3,1)
@@ -19,7 +21,8 @@ fun main() {
 //    DSA.pattern1(4)
 //    println(DSA.peak())
 //    println(DSA.searchFirsthalf())
-    println(DSA.cyclicSortMissingNo())
+//    println(DSA.cyclicSortMissingNo())
+    println(DSA.missingNumber())
 }
 
 
