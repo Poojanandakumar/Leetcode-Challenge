@@ -22,7 +22,8 @@ fun main() {
 //    println(DSA.peak())
 //    println(DSA.searchFirsthalf())
 //    println(DSA.cyclicSortMissingNo())
-    println(DSA.missingNumber())
+    println(DSA.kidsWithCandies())
+
 }
 
 

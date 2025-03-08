@@ -289,7 +289,7 @@ public class DSA {
             }
             k++;
         }
-        return nums.length+1;
+        return nums.length + 1;
 
     }
 
@@ -371,6 +371,31 @@ public class DSA {
         System.out.println(Arrays.deepToString(matrix));
     }
 
+
+    public static List<Boolean> kidsWithCandies() {
+        int[] candies = {4,2,1,1,2};
+        int extraCandies = 1;
+        List<Boolean> result = new ArrayList<Boolean>();
+        for (int i = 0; i < candies.length; i++) {
+            int total = candies[i] + extraCandies;
+            if (isGreatest(candies, total,i)) {
+                result.add(true);
+            } else {
+                result.add(false);
+            }
+        }
+        return result;
+    }
+
+    static boolean isGreatest(int[] candies, int total,int k) {
+
+        for (int i = 0; i < candies.length; i++) {
+            if(i!=k && candies[i]>total){
+                return false;
+            }
+        }
+        return true;
+    }
 
 
 }
