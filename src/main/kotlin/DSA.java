@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class DSA {
@@ -339,6 +340,37 @@ public class DSA {
         }
         return result;
     }
+
+    public static void setZeroes(int[][] matrix) {
+        List<int[]> list = new ArrayList<>();
+        for (int k = 0; k < matrix.length; k++) {
+            for (int m = 0; m < matrix[0].length; m++) {
+                if (matrix[k][m] == 0) {
+                    int[] a = new int[]{k, m};
+                    list.add(a);
+                }
+            }
+        }
+        int k = 0;
+        System.out.println(Arrays.toString(list.get(1)));
+        while (k < list.size()) {
+            int[] a = list.get(k);
+            int i = a[0];
+            int j = a[1];
+            for (int m = 0; m < matrix[0].length; m++) {
+                matrix[i][m] = 0;
+            }
+
+            for (int m = 0; m < matrix.length; m++) {
+                matrix[m][j] = 0;
+            }
+
+            k++;
+
+        }
+        System.out.println(Arrays.deepToString(matrix));
+    }
+
 
 
 }
